@@ -1,5 +1,5 @@
 function getRandomInteger(min, max) {
-  if(min >= 0 && max >= min) {
+  if (min >= 0 && max > min) {
     return Math.floor(Math.random() * (max - min +1)) + min;
   } else {
     return 'Invalid Input Parameters';
@@ -8,12 +8,10 @@ function getRandomInteger(min, max) {
 
 getRandomInteger(0, 10);
 
-function checkMaxStringLength(userComment, MAX_LENGTH) {
-  if(userComment <= MAX_LENGTH) {
-    return true;
-  } else {
-    return false;
-  }
+const MAX_LENGTH = 140;
+
+function checkMaxStringLength (string, maxLength) {
+  return string.length <= maxLength;
 }
 
-checkMaxStringLength(30, 140);
+checkMaxStringLength('Всем привет!', MAX_LENGTH);
